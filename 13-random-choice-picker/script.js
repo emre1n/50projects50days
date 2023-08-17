@@ -23,6 +23,8 @@ function createTags(input) {
 
   tagsEl.innerHTML = '';
 
+  if (tags.length === 0) return;
+
   tags.forEach(tag => {
     const tagEl = document.createElement('span');
     tagEl.classList.add('tag');
@@ -57,13 +59,15 @@ function randomSelect() {
 
 function pickRandomTag() {
   const tags = document.querySelectorAll('.tag');
-  return tags[Math.floor(Math.random() * tags.length)];
+  if (tags.length > 0) {
+    return tags[Math.floor(Math.random() * tags.length)];
+  }
 }
 
 function highlightTag(tag) {
-  tag.classList.add('highlight');
+  tag && tag.classList.add('highlight');
 }
 
 function unHighlightTag(tag) {
-  tag.classList.remove('highlight');
+  tag && tag.classList.remove('highlight');
 }
