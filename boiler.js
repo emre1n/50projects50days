@@ -76,7 +76,22 @@ function createBoilerplate(directoryName, projectTitle, includeFontAwesome) {
 `;
 
   const styleCSSContent = `
-/* Add your CSS styles here */
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+  }
 `;
 
   const scriptJSContent = `
