@@ -1,2 +1,10 @@
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', fixNav);
 
-// Add your JavaScript code here
+function fixNav() {
+  if (window.scrollY > nav.offsetHeight + 150) {
+    nav.classList.add('active');
+  } else {
+    nav.classList.remove('active');
+  }
+}
